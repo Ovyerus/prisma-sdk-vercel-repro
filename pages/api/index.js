@@ -26,6 +26,8 @@ enum Role {
 }
 `;
 
+path.join('../../node_modules/@prisma/engines/query-engine-rhel-openssl-1.0.x')
+
 export default async function (req, res) {
   try {
     const dmmf = await getDMMF({ datamodel });

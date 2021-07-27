@@ -1,5 +1,10 @@
 import { getDMMF } from "@prisma/sdk";
 
+const path = require('path');
+path.join(process.cwd(), 'node_modules/@prisma/engines/query-engine-rhel-openssl-1.0.x')
+path.join(process.cwd(), 'node_modules/@prisma/engines/query-engine-windows.exe')
+
+
 const datamodel = `
 model User {
   id Int @id @default(autoincrement())
@@ -28,8 +33,6 @@ enum Role {
 
 export default async function (req, res) {
 
-  const path = require('path');
-  path.join('../../node_modules/@prisma/engines/query-engine-rhel-openssl-1.0.x')
 
   try {
     const dmmf = await getDMMF({ datamodel });
